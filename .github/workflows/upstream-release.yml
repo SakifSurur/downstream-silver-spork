@@ -1,0 +1,9 @@
+name: Upstream release
+on:
+  repository_dispatch:
+    types: [on-demand-test]
+
+jobs:
+  downstream-release:
+    steps:
+      - run: echo ${{ github.event.client_payload.version }}
